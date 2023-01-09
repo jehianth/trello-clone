@@ -10,4 +10,4 @@ Commit :
 - setup sequelize
 - setup db model migrate seed
 
-When running postman don't forget to npm run dev on be-trello
+When running postman don't forget to run server and npm run dev on be-trello
