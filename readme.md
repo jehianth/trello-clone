@@ -9,3 +9,5 @@ Commit :
 - setup express api
 - setup sequelize
 - setup db model migrate seed
+
+When running postman don't forget to npm run dev on be-trello
