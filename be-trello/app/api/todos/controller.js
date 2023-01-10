@@ -19,4 +19,16 @@ module.exports = {
             console.log(err);
         }
     },
+    create: async(req, res) => {
+        try {
+            const {name} = req.body;
+            const result = await Todo.create({name});
+            res.status(201).json({
+                message: 'success',
+                data: result
+            });
+        } catch (err) {
+            
+        }
+    }
 };
