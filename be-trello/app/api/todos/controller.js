@@ -25,10 +25,10 @@ module.exports = {
             const result = await Todo.create({name});
             res.status(201).json({
                 message: 'success',
-                data: result
+                data: result,
             });
         } catch (err) {
-            
+            console.log(err);
         }
     }
 };
