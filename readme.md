@@ -9,6 +9,6 @@ Commit :
 - setup express api
 - setup sequelize
 - setup db model migrate seed
-- setup crud (getAll, postCreate, getOne, ..)
+- setup crud (getAll, postCreate, getOne, putUpdate, ..)
 
 When running postman don't forget to run server and npm run dev on be-trello
