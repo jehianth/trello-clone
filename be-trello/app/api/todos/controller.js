@@ -1,6 +1,7 @@
 const {Todo, Item} = require('../../db/models');
 // client req endpoint todo, lalu respon yang dibalikin client apa
 module.exports = {
+
     getAll : async(req, res) => {
         try {
             const result = await Todo.findAll({
@@ -19,6 +20,7 @@ module.exports = {
             console.log(err);
         }
     },
+
     create: async(req, res) => {
         try {
             const {name} = req.body;
@@ -31,6 +33,7 @@ module.exports = {
             console.log(err);
         }
     },
+
     getOne: async(req, res) => {
         try {
             const {id} = req.params;
@@ -44,5 +47,16 @@ module.exports = {
         } catch (err) {
             
         }
-    }
+    },
+
+    update: (req, res) => {
+        const {id} = req.params;
+        const {name} = req.params;
+        Todo.findOne({ where: {id: id} })
+        .then((todo) => {
+            todo.update({ name: name });
+        }).catch((err) => {
+            console.log(err);
+        });
+    },
 };
