@@ -51,10 +51,15 @@ module.exports = {
 
     update: (req, res) => {
         const {id} = req.params;
-        const {name} = req.params;
+        const {name} = req.body;
         Todo.findOne({ where: {id: id} })
         .then((todo) => {
-            todo.update({ name: name });
+            todo.update({ name: name }).then(() =>{
+                res.status(200).json({
+                    message: 'success',
+                    data: todo,
+                });
+            });
         }).catch((err) => {
             console.log(err);
         });
