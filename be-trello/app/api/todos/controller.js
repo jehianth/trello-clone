@@ -45,7 +45,7 @@ module.exports = {
                 data: result,
             });
         } catch (err) {
-            
+            console.log(err);
         }
     },
 
@@ -64,4 +64,16 @@ module.exports = {
             console.log(err);
         });
     },
+
+    destroy: (req, res) => {
+        Todo.destroy({ where: {id: id} })
+        .then((todo) => {
+            res.status(200).json({
+                message: 'success',
+                data: todo,
+            });
+        }).catch((err) => {
+            console.log(err);
+        });
+    }
 };
