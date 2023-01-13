@@ -66,6 +66,7 @@ module.exports = {
     },
 
     destroy: (req, res) => {
+        const {id} = req.params;
         Todo.destroy({ where: {id: id} })
         .then((todo) => {
             res.status(200).json({
