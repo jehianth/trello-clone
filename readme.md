@@ -10,6 +10,6 @@ Commit :
 - setup sequelize
 - setup db model migrate seed
 - setup crud (getAll, postCreate, getOne, putUpdate, deleteDestroy)
-- setup express validator
+- setup express-validator (validateCreate, ..)
 
 When running postman don't forget to run server and npm run dev on be-trello
